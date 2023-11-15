@@ -1,0 +1,121 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% clear styles
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Custom commands
+\newcommand{\summary}[1]{
+  \item\small{
+    #1 \vspace{-4pt}
+  }
+}
+
+\newcommand{\itemInline}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\heading}[3]{
+  \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textit{\small #2} \\
+    \textit{\small#3} \\
+  \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\itemListStart}{\begin{itemize}}
+\newcommand{\itemListEnd}{\end{itemize}\vspace{-5pt}}
+\renewcommand{\labelitemi}{\raise .3ex\hbox{\tiny$\bullet$}}
+
+\begin{document}
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\Large \href{https://www.linkedin.com/in/PLACEHOLDER}{John Doe}}\\
+    Montevideo, Uruguay (GMT-3)
+  \end{tabular*}
+  \section{About me}
+  {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam }
+  \section{Education}
+  \heading{University ABC}{Aug. 2015 - May 2020}{Bachelor of Engineering in Computer Science}
+  \section{Experience}
+  \heading{\href{https://www.business.io/PLACEHOLDER}{Business.io}}{Apr. 2020 - Apr. 2023}
+  {Product Engineer}
+  \itemListStart
+    \summary {Something about this business}
+    \begin{itemize}
+      \item {Worked with clients in order to identify and fix issues across private and public repositories}
+      \item {Developed key features like A, B, C and D}
+      \item {Streamlined some process}
+      \item {Worked on adding multi-tenant support to some component}
+    \end{itemize}
+    \summary {Maintained an open source repository}
+    \begin{itemize}
+      \item {Worked with users in order to identify something of critical value}
+      \item {Fixed some typos here and there}
+    \end{itemize}
+  \itemListEnd
+  \heading{\href{https://en.wikipedia.org/wiki/PLACEHOLDER}{Acme Inc}}{Sept. 2017 - Oct. 2020}
+  {Senior Software Engineer}
+  \itemListStart
+    \summary
+    {Developed and maintained a platform that was used by thousand of developers wordwide:}
+    \begin{itemize}
+      \item {Worked on decoupling our solution from A and integrating B as an alternative to C with great success}
+      \item {Developed a feature that enabled users to do X much much faster}
+      \item {Participated in on-call rotations. Woke up other team members only in 2\% of the incidents}
+      \item {Built tools to monitor our BigCloud infrastructure across thousands of machines}
+      \item {Managed some dashboards and metrics}
+    \end{itemize}
+    \summary {I also worked on several initiatives that involved other platform teams:}
+    \begin{itemize}
+      \item {Launched a X+Y initiative for all teams using Z, greatly reducing time to W}
+      \item {Created and reviewed postmortems of company-wide incidents}
+      \item {Organized and produced documentation for thousands of developers using our platform}
+      \item {Developed a distributed XYZ service used by multiple teams to replicate real-world scenarios}
+    \end{itemize}
+  \itemListEnd
+  \heading{\href{https://page.com/PLACEHOLDER}{Placeholder industries}}{Oct. 2014 - Aug. 2017}{Software Developer}
+  \heading{University ABC}{Mar. 2014 - Oct. 2014}{Gymnastics assistant professor}
+  \section{Technologies}
+  \itemListStart
+    \itemInline{Programming languages}{Mostly Java and Go. Also, Bash or Python for scripts and tools. Ruby, React and Node when needed.}
+    \itemInline{Operation}{AWS, GCP, CloudFormation, Linux, Docker}
+    \itemInline{Monitoring}{Datadog, NewRelic, Kibana}
+    \itemInline{Storage}{DynamoDB, MySQL, PostgreSQL}
+  \itemListEnd
+\end{document}
